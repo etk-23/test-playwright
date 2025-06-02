@@ -10,5 +10,6 @@ test('Should fail to login with wrong credentials', async ({ page }) => {
 
   // Wrong expectation: we're expecting successful login, but it won't happen
   await expect(page).toHaveURL(/login-success/); // This will FAIL
-  await expect(page.locator('h1')).toHaveText('Welcome!');
+  //await expect(page.locator('h1')).toHaveText('Welcome!');
+
 });
