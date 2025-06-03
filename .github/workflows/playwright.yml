@@ -18,12 +18,26 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
       - name: Install dependencies
-        run: npm install
+        run: 
+          npm install
+          python -m pip install --upgrade pip
+          pip install pytest
+          
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: 
+          npx playwright install --with-deps
+          pip install playwright
+          playwright install
 
       - name: Run tests
-        run: npm test
+        run: 
+          npm test
+          pytest tests/
