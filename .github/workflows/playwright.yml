@@ -25,19 +25,19 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: 
+        run: |
           npm install
           python -m pip install --upgrade pip
           pip install pytest
           
 
       - name: Install Playwright Browsers
-        run: 
+        run: |
           npx playwright install --with-deps
           pip install playwright
           playwright install
 
       - name: Run tests
-        run: 
+        run: |
           npm test
           pytest tests/
